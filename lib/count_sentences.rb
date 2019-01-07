@@ -15,10 +15,9 @@ return self.end_with?("!")
   end
 
   def count_sentences
-delimiters = ['!', '.', "?"]
-arr=self.split(Regexp.union(delimiters))
+self..gsub(/[.?!]/, '\0|') 
 
 
-arr.count
+self.count
   end
 end
